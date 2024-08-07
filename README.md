@@ -12,9 +12,6 @@ This project aims to develop a palm vein-based authenticator for devices with li
 - [Android Application](#android-application)
 - [Model Service](#model-service)
 - [Setup](#setup)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 
@@ -29,6 +26,9 @@ This project is designed to perform palm vein authentication using a Raspberry P
 
 The MediaPipe script tracks hand landmarks to extract the ROI of the palm. It processes the image to determine the center of the palm and crops the image to focus on the palm area.
 
+![Hand Detection with ROI](https://github.com/mateusnunesnunes/Palm-Vein-Verification-Scheme-Using-Deep-Autoencoder-and-Siamese-Networks/raw/main/docs/images/handMark.png)
+
+
 ## Server Implementation
 
 The server script handles WebSocket connections and manages communication with various components, including the autoencoder and Siamese network. It processes incoming images and executes corresponding scripts based on the command received.
@@ -37,9 +37,13 @@ The server script handles WebSocket connections and manages communication with v
 
 The Siamese network compares pairs of images to determine similarity. It uses a pre-trained model to generate embeddings for each image and compares them to verify authentication.
 
+![Siamese network comparing](https://github.com/mateusnunesnunes/Palm-Vein-Verification-Scheme-Using-Deep-Autoencoder-and-Siamese-Networks/raw/main/docs/images/siameseCompares.png)
+
 ## Autoencoder Model
 
 The autoencoder model enhances palm veins from a visible image. It is trained with pairs of visible and infrared spectrum images to learn how to highlight palm veins effectively.
+
+![Autoencoder generated images](https://github.com/mateusnunesnunes/Palm-Vein-Verification-Scheme-Using-Deep-Autoencoder-and-Siamese-Networks/raw/main/docs/images/autoencoderResult.png)
 
 ## Android Application
 
